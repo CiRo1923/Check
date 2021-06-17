@@ -1,0 +1,50 @@
+<%
+  const TITLENAME = '遠東百貨';
+  const TITLE = htmlWebpackPlugin.options.title !== 'Webpack App' ? htmlWebpackPlugin.options.title : TITLENAME;
+  const COPYRIGHT = '© Copyright 2017 FEDS All rights reserved.';
+  const IEVERSION = 10;
+  const fileName = /(.*)(?=\.html$)/.exec(htmlWebpackPlugin.options.filename)[1];
+  const reqFile = require('../'+ fileName +'.ejs')({
+                    'htmlWebpackPlugin' : htmlWebpackPlugin
+                  });
+-%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <meta property="og:title" content="<%- TITLE %>">
+    <meta property="og:description" name="description" content="<%- htmlWebpackPlugin.options.description ? htmlWebpackPlugin.options.description : '' %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="<%- TITLE %>">
+    <title><%- TITLE %></title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+    <link rel="canonical" href="">
+  </head>
+  <body class="Bgc(xf4) C(x34) Fz(14)">
+    <div class="lWrap">
+      <main class="lM Mx(20,t) Mx(10,m)">
+        <div class="mCnt Mx(auto) Px(48,p) Py(72,p) Px(24,t) Py(32,t) Px(10,m) Py(24,m) Bdw(1) Bdc(xcd) Bdst(sol) Bxz(bd) Bgc(xf) Maw(1300)">
+          <%- reqFile %>
+        </div>
+      </main>
+    </div>
+    <%- require('../_components/Ejs/mNSup.ejs')({
+      cRight: COPYRIGHT,
+      ieVersion: IEVERSION
+    }) %>
+  </body>
+</html>

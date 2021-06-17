@@ -1,0 +1,44 @@
+.mSubTitle {
+  &::before {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+@mixin maxPC {
+  .mSubTitle {
+    &::before {
+      width: 35px;
+      height: 4px;
+    }
+  }
+}
+
+@mixin minPC {
+  .mSubTitle {
+    &::before {
+      width: vmp(35px);
+      height: vmp(4px);
+    }
+  }
+}
+
+@mixin T {
+  .mSubTitle {
+    &::before {
+      width: vmt(32px);
+      height: vmt(3px);
+    }
+  }
+}
+
+@mixin M {
+  .mSubTitle {
+    &::before {
+      width: vmm(30px);
+      height: vmm(2px);
+    }
+  }
+}

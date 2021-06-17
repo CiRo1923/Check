@@ -1,0 +1,18 @@
+<ol class="mStepHd Mb(40,p) Mb(28,t) Mb(20,m) D(fx) Ai(c)">
+  <% for(let i = 0; i < data.length; i += 1) { -%>
+    <% const {text, icon} = data[i]; -%>
+    <li class="D(fx) Fxd(row-r,pt) Fxd(col-r,m) Ai(c) Jc(e) Fx(auto) Pos(r)">
+      <div class="mStepInfo Fw(b) Ta(c,m) Fxg">
+        <p class="Fz(16,pt) Fz(12,m)"><%- text %></p>
+      </div>
+      <% if (icon) { -%>
+        <div class="mStepIcon Mr(20,p) Mr(16,t) WH(100) Bdrs(50%) D(fx) Fxd(col) Ai(c) Jc(c) Fxsh Pos(r,m)">
+          <%- require('./svg.ejs')({
+            className: 'WH(50) Fi(xf) Pos(r)',
+            svgName: icon
+          }) %>
+        </div>
+      <% } -%>
+    </li>
+  <% } -%>
+</ol>

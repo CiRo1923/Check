@@ -1,0 +1,10 @@
+<%
+  const channelBold = channelName ? channelName.split('|')[0] : '';
+  const channelRegular = channelName ? channelName.split('|')[1] : '';
+-%>
+<div class="mChannel Py(56,p) Py(40,t) Py(16,m) Ta(c)">
+  <h2 class="mChannelTitle Py(28,p) Py(20,t) Py(16,m) D(ib) Ls(2) Pos(r) $bf.Bgc(xd019) $af.Bgc(xd019)">
+    <p class="Fz(50)"><b><%- channelBold %></b><%- channelRegular %></p>
+    <p class="Fz(18,pt) Fz(14,m) Lh(1)"><%- channelEn  %></p>
+  </h2>
+</div>

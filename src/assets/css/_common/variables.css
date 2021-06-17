@@ -1,0 +1,21 @@
+:root {
+  --font-family: arial, "微軟正黑體", "Microsoft JhengHei", "Heiti TC", "黑體", sans-serif, serif;
+  --line-height: 1.6;
+  --anim-time: 0.3s;
+  --desktop-fontsize: (50, 36, 24, 18, 16, 14, 12);
+  --tablet-fontsize: (40, 30, 22, 17, 15, 14, 12);
+  --mobile-fontsize: (30, 24, 20, 16, 14, 13, 12);
+  --color:
+    (
+      xf    : #fff,
+      x0    : #000,
+      xf4   : #f4f4f4,
+      xcd   : #cdcdcd,
+      x9a   : #9a9a9a,
+      x67   : #676767,
+      x34   : #343434,
+      xd019 : #d90a19,
+      x04a2 : #004ca2,
+      xf65c : #fd6b5c
+    );
+}

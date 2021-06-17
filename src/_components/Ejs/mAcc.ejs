@@ -1,0 +1,27 @@
+
+<div class="mAcc <%- typeof accStyle !== 'undefined' ? ` ${accStyle}` : '' %>">
+  <% if ( typeof title !== 'undefined' ) { -%>
+    <header class="mAccHd">
+      <%- title %>
+    </header>
+  <% } -%>
+  <ul class="mAccBd">
+      <% for(let i = 0; i < data.length; i += 1) { -%>
+        <% const { title, content, component } = data[i]; -%>
+        <li>
+          <button type="button" class="mAccCtrl W(full)<%- typeof ctrlStyle !== 'undefined' ? ` ${ctrlStyle}` : '' %> jAccCtrl">
+            <%- title %>
+          </button>
+          <div class="mAccCnt Ov(hide) jAccCnt">
+            <div class="<%- typeof cntStyle !== 'undefined' ? ` ${cntStyle}` : '' %>">
+              <% if ( component ) { -%>
+                <%- require(`../_components/${component}.ejs`)(content) %>
+              <% } else { -%>
+                <%- content %>
+              <% } -%>
+            </div>
+          </div>
+        </li>
+      <% } -%>
+  </ul>
+</div>

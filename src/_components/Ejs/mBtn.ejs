@@ -1,0 +1,27 @@
+<%
+  let inHref = 'href="javascript:;"';
+  let inStyle = null;
+
+  if ( typeof href !== 'undefined' ) {
+    if ( /^:href=/.test(href) ) {
+      inHref = href;
+    } else {
+      inHref = `href="${href}"`;
+    }
+  }
+
+  if ( typeof style !== 'undefined' ) {
+    if ( style === '--line' ) {
+      inStyle = ` ${style} Bdw(1) Bdc(x34) Bdst(sol)`;
+    }
+  }
+-%>
+<% if( type === 'anchor' ) { -%>
+  <a <%- inHref %> class="mBtn<%- inStyle %> hover:Bgc(xd019) hover:Bdc(xd019) hover:C(xf)"<%- typeof clickFun !== 'undefined' ? ` @click="${clickFun}"` : '' %>>
+    <em class="Fz(16)"><%- text %></em>
+  </a>
+<% } else { -%>
+  <button type="button" class="mBtn<%- inStyle %> hover:Bgc(xd019) hover:Bdc(xd019) hover:C(xf)"<%- typeof clickFun !== 'undefined' ? ` @click="${clickFun}"` : '' %>>
+    <em class="Fz(16)"><%- text %></em>
+  </button>
+<% } -%>

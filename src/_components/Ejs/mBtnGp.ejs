@@ -1,0 +1,9 @@
+<div class="mBtnGp<%- typeof style !== 'undefined' && typeof style.main !== 'undefined' ? ` ${style.main}` : '' %>">
+  <ul<%- typeof style !== 'undefined' && typeof style.ul !== 'undefined' ? ` class="${style.ul}"` : '' %>>
+    <% for(let i = 0; i < btns.length; i += 1) { -%>
+      <li<%- typeof style !== 'undefined' && typeof style.li !== 'undefined' ? ` class="${style.li}"` : '' %>>
+        <%- require('./mBtn.ejs')(btns[i]) %>
+      </li>
+    <% } -%>
+  </ul>
+</div>

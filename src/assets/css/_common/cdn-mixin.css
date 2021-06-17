@@ -1,0 +1,52 @@
+
+@define-mixin maxPC {
+  @media screen and (min-width: mediaQuery(desktop, +)) {
+    @mixin-content;
+  }
+}
+
+@define-mixin PC {
+  @media screen and (min-width: 1001px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin minPC {
+  @media screen and (min-width: 1001px) and (max-width: mediaQuery(desktop)) {
+    @mixin-content;
+  }
+}
+
+@define-mixin PC-T {
+  @media screen and (min-width: mediaQuery(mobile)) and (min-height: 428px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin T-M {
+  @media screen and (max-width: 1001px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin T {
+  @media screen and (min-width: mediaQuery(mobile)) and (max-width: 1001px) and (min-height: 428px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin M {
+  @media screen and (max-width: 999px) and (max-height: 428px) and (orientation: landscape), screen and (max-width: mediaQuery(mobile, -)) {
+    @mixin-content;
+  }
+}
+
+@define-mixin n-sup {
+  @media \0screen\, screen\9 {
+    @mixin-content;
+  }
+
+  @media all and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
+    @mixin-content;
+  }
+}

@@ -1,0 +1,41 @@
+.mBtn {
+  @apply .Bxz\(bd\), .D\(ib\);
+
+  transition:
+    background-color var(--anim-time),
+    border-color var(--anim-time),
+    color var(--anim-time);
+}
+
+@mixin maxPC {
+  .mBtn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    min-width: 250px;
+  }
+}
+
+@mixin minPC {
+  .mBtn {
+    padding-top: vmp(6px);
+    padding-bottom: vmp(6px);
+    min-width: vmp(250px);
+  }
+}
+
+@mixin T {
+  .mBtn {
+    padding-top: vmt(5px);
+    padding-bottom: vmt(5px);
+    min-width: vmt(200px);
+  }
+}
+
+@mixin M {
+  .mBtn {
+    @apply .W\(full\);
+
+    padding-top: vmm(4px);
+    padding-bottom: vmm(4px);
+  }
+}

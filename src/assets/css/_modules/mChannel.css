@@ -1,0 +1,90 @@
+.mChannelTitle {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    transform: rotate(-37.5deg);
+  }
+
+  &::before {
+    top: 0;
+    transform-origin: right bottom;
+  }
+
+  &::after {
+    bottom: 0;
+    transform-origin: left top;
+  }
+}
+
+@mixin maxPC {
+  .mChannelTitle {
+    &::before,
+    &::after {
+      width: 76px;
+      height: 4px;
+    }
+
+    &::before {
+      left: -48px;
+    }
+
+    &::after {
+      right: -48px;
+    }
+  }
+}
+
+@mixin minPC {
+  .mChannelTitle {
+    &::before,
+    &::after {
+      width: vmp(76px);
+      height: vmp(4px);
+    }
+
+    &::before {
+      left: vmp(-48px);
+    }
+
+    &::after {
+      right: vmp(-48px);
+    }
+  }
+}
+
+@mixin T {
+  .mChannelTitle {
+    &::before,
+    &::after {
+      width: vmt(66px);
+      height: vmt(3px);
+    }
+
+    &::before {
+      left: vmt(-42px);
+    }
+
+    &::after {
+      right: vmt(-42px);
+    }
+  }
+}
+
+@mixin M {
+  .mChannelTitle {
+    &::before,
+    &::after {
+      width: vmm(56px);
+      height: vmm(2px);
+    }
+
+    &::before {
+      left: vmm(-36px);
+    }
+
+    &::after {
+      right: vmm(-36px);
+    }
+  }
+}

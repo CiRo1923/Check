@@ -1,0 +1,168 @@
+:root {
+  --desktop-header-height: 70px;
+  --tablet-header-height: 66px;
+  --mobile-header-height: 56px;
+  --desktop-image-size: (100, 60, 50, 36);
+  --tablet-image-size: (80, 50, 40, 36);
+  --mobile-image-size: (60, 40, 30, 36);
+
+  /* --border-radius: (0); */
+}
+
+@each $name1, $value1 in var(--color) {
+  @each $name2, $value2 in var(--color) {
+    .act {
+      @if $(name1) != $(name2) {
+        &.act\:C\(0\%\:$(name1)-100\%\:$(name2)\), & > .act\:C\(0\%\:$(name1)-100\%\:$(name2)\) {
+          background-image: linear-gradient(to bottom, $(value1) 0%, $(value2) 100%);
+          background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+
+    .Grax\(0\%\:$(name1)-100\%\:$(name2)\) {
+      background-image: linear-gradient(to bottom, $(value1) 0%, $(value2) 100%);
+    }
+
+    .Gray\(0\%\:$(name1)-100\%\:$(name2)\) {
+      background-image: linear-gradient(to right, $(value1) 0%, $(value2) 100%);
+    }
+  }
+}
+
+.Lh\(1\) {
+  line-height: 1;
+}
+
+.Lh\(1\.35\) {
+  line-height: 1.35;
+}
+
+.Lh\(2\.25\) {
+  line-height: 2.25;
+}
+
+.Ls\(2\) {
+  letter-spacing: 2px;
+}
+
+/* @each $key in var(--border-radius) {
+  .Bdrs\($(key)\) {
+    border-radius: $(key)px;
+  }
+} */
+
+@mixin maxPC {
+  .Maw\(1300\) {
+    max-width: 1300px;
+  }
+
+  @each $desktopkey in var(--desktop-image-size) {
+    .W\($(desktopkey)\), .W\($(desktopkey)\,p\), .W\($(desktopkey)\,pt\) {
+      width: $(desktopkey)px;
+    }
+
+    .H\($(desktopkey)\), .H\($(desktopkey)\,p\), .H\($(desktopkey)\,pt\) {
+      height: $(desktopkey)px;
+    }
+
+    .WH\($(desktopkey)\), .WH\($(desktopkey)\,p\), .WH\($(desktopkey)\,pt\) {
+      width: $(desktopkey)px;
+      height: $(desktopkey)px;
+    }
+  }
+}
+
+@mixin minPC {
+  .Maw\(1300\) {
+    max-width: vmp(1300px);
+  }
+
+  @each $desktopkey in var(--desktop-image-size) {
+    .W\($(desktopkey)\), .W\($(desktopkey)\,p\), .W\($(desktopkey)\,pt\) {
+      width: vmp($(desktopkey) px);
+    }
+
+    .H\($(desktopkey)\), .H\($(desktopkey)\,p\), .H\($(desktopkey)\,pt\) {
+      height: vmp($(desktopkey) px);
+    }
+
+    .WH\($(desktopkey)\), .WH\($(desktopkey)\,p\), .WH\($(desktopkey)\,pt\) {
+      width: vmp($(desktopkey) px);
+      height: vmp($(desktopkey) px);
+    }
+  }
+}
+
+@mixin T {
+  @each $desktopkey, $desktopidx in var(--desktop-image-size) {
+    @each $tabletkey, $tabletidx in var(--tablet-image-size) {
+      @if $desktopidx == $tabletidx {
+        .W\($(desktopkey)\), .W\($(desktopkey)\,pt\), .W\($(desktopkey)\,tm\) {
+          width: vmt($(tabletkey) px);
+        }
+
+        .H\($(desktopkey)\), .H\($(desktopkey)\,pt\), .H\($(desktopkey)\,tm\) {
+          height: vmt($(tabletkey) px);
+        }
+
+        .WH\($(desktopkey)\), .WH\($(desktopkey)\,pt\), .WH\($(desktopkey)\,tm\) {
+          width: vmt($(tabletkey) px);
+          height: vmt($(tabletkey) px);
+        }
+      }
+    }
+  }
+
+  @each $tabletkey, $tabletidx in var(--tablet-image-size) {
+    .W\($(tabletkey)\,t\) {
+      width: vmt($(tabletkey) px);
+    }
+
+    .H\($(tabletkey)\,t\) {
+      height: vmt($(tabletkey) px);
+    }
+
+    .WH\($(tabletkey)\,t\) {
+      width: vmt($(tabletkey) px);
+      height: vmt($(tabletkey) px);
+    }
+  }
+}
+
+@mixin M {
+  @each $desktopkey, $desktopidx in var(--desktop-image-size) {
+    @each $mobilekey, $mobileidx in var(--mobile-image-size) {
+      @if $desktopidx == $mobileidx {
+        .W\($(desktopkey)\), .W\($(desktopkey)\,tm\) {
+          width: vmm($(mobilekey) px);
+        }
+
+        .H\($(desktopkey)\), .H\($(desktopkey)\,tm\) {
+          height: vmm($(mobilekey) px);
+        }
+
+        .WH\($(desktopkey)\), .WH\($(desktopkey)\,tm\) {
+          width: vmm($(mobilekey) px);
+          height: vmm($(mobilekey) px);
+        }
+      }
+    }
+  }
+
+  @each $mobilekey, $mobileidx in var(--mobile-image-size) {
+    .W\($(mobilekey)\,m\) {
+      width: vmm($(mobilekey) px);
+    }
+
+    .H\($(mobilekey)\,m\) {
+      height: vmm($(mobilekey) px);
+    }
+
+    .WH\($(mobilekey)\,m\) {
+      width: vmm($(mobilekey) px);
+      height: vmm($(mobilekey) px);
+    }
+  }
+}

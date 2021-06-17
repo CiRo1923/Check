@@ -1,0 +1,119 @@
+.mStepInfo {
+  color: #d90a19;
+
+  &::before {
+    counter-increment: section;
+    content: "Step."counter(section);
+    display: block;
+  }
+}
+
+.mStepIcon {
+  background-color: #d90a19;
+
+  &::before {
+    content: "";
+    top: 50%;
+    height: 1px;
+    background-color: #d90a19;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+.mStep {
+  @for $i from 1 to 5 {
+    &.\-\-step\($(i)\) {
+      .mStepHd {
+        > li {
+          &:nth-child($(i)) {
+            & ~ * {
+              .mStepInfo {
+                color: #b3b3b3;
+              }
+
+              .mStepIcon {
+                background-color: #b3b3b3;
+
+                &::before {
+                  background-color: #b3b3b3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mStepHd {
+  counter-reset: section;
+}
+
+@mixin maxPC {
+  .mStepInfo {
+    line-height: 50px;
+
+    &::before {
+      font-size: 36px;
+    }
+  }
+}
+
+@mixin minPC {
+  .mStepInfo {
+    line-height: vmp(50px);
+
+    &::before {
+      font-size: vmp(36px);
+    }
+  }
+}
+
+@mixin PC-T {
+  .mStepIcon {
+    &::before {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+@mixin T {
+  .mStepInfo {
+    line-height: vmt(40px);
+
+    &::before {
+      font-size: vmt(30px);
+    }
+  }
+}
+
+@mixin M {
+  .mStepInfo {
+    &::before {
+      font-size: vmm(24px);
+    }
+  }
+
+  .mStepIcon {
+    &::before {
+      left: 50%;
+      width: 200%;
+    }
+  }
+
+  .mStepHd {
+    > li {
+      &:last-child {
+        .mStepIcon {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

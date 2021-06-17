@@ -1,0 +1,170 @@
+.mFormType {
+  input {
+    &:not([type="radio"]):not([type="checkbox"]) {
+      @apply .Bdw\(1\), .Bdc\(x9a\), .Bdst\(sol\), .Bxz\(bd\), .W\(full\), .Bdrs\(5\);
+
+      font-family: var(--font-family);
+      outline: 0;
+      transition: border-color var(--anim-time);
+    }
+  }
+
+  &.\-\-error {
+    input {
+      &:not([type="radio"]):not([type="checkbox"]) {
+        @apply .Bdc\(xd019\);
+      }
+    }
+  }
+
+  &.\-\-checkbox,
+  &.\-\-radio {
+    cursor: pointer;
+
+    > input {
+      @apply .Pos\(a\), .L\(-99999\);
+    }
+
+    > * {
+      &:not(.mFormIcon):not(input) {
+        order: 2;
+      }
+    }
+  }
+
+  &.\-\-checkbox {
+    .mFormIcon {
+      &::before {
+        @apply .Bdbc\(xf\), .Bdbc\(xf\), .Bdlc\(xf\), .Bdst\(sol\);
+
+        border: 0;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.mFormIcon {
+  order: 1;
+  transition: border-color var(--anim-time), background-color var(--anim-time);
+
+  &::before {
+    @apply .Pos\(a\);
+
+    content: "";
+  }
+}
+
+@mixin maxPC {
+  .mFormType {
+    > input {
+      &:not([type="radio"]):not([type="checkbox"]) {
+        padding-right: 14px;
+        padding-left: 14px;
+        height: 36px;
+      }
+    }
+
+    &.\-\-checkbox {
+      .mFormIcon {
+        &::before {
+          top: 4px;
+          left: 4px;
+          width: 8px;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  .mFormIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@mixin minPC {
+  .mFormType {
+    > input {
+      &:not([type="radio"]):not([type="checkbox"]) {
+        padding-right: vmp(14px);
+        padding-left: vmp(14px);
+        height: vmp(36px);
+      }
+    }
+
+    &.\-\-checkbox {
+      .mFormIcon {
+        &::before {
+          top: vmp(4px);
+          left: vmp(4px);
+          width: vmp(8px);
+          height: vmp(5px);
+        }
+      }
+    }
+  }
+
+  .mFormIcon {
+    width: vmp(18px);
+    height: vmp(18px);
+  }
+}
+
+@mixin T {
+  .mFormType {
+    > input {
+      &:not([type="radio"]):not([type="checkbox"]) {
+        padding-right: vmt(14px);
+        padding-left: vmt(14px);
+        height: vmt(36px);
+      }
+    }
+
+    &.\-\-checkbox {
+      .mFormIcon {
+        &::before {
+          top: vmt(4px);
+          left: vmt(4px);
+          width: vmt(8px);
+          height: vmt(5px);
+        }
+      }
+    }
+  }
+
+  .mFormIcon {
+    width: vmt(18px);
+    height: vmt(18px);
+  }
+}
+
+@mixin M {
+  .mFormType {
+    > input {
+      &:not([type="radio"]):not([type="checkbox"]) {
+        padding-right: vmm(14px);
+        padding-left: vmm(14px);
+        height: vmm(36px);
+      }
+    }
+
+    &.\-\-checkbox {
+      .mFormIcon {
+        &::before {
+          top: vmm(4px);
+          left: vmm(4px);
+          width: vmm(8px);
+          height: vmm(5px);
+        }
+      }
+    }
+  }
+
+  .mFormIcon {
+    width: vmm(18px);
+    height: vmm(18px);
+  }
+}

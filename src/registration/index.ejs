@@ -1,0 +1,13 @@
+<footer class="mStepFt Mt(40,p) Mt(28,t) Mt(20,m)">
+  <%- require('../_components/Ejs/mBtnGp.ejs')({
+    style: {
+      ul: 'Ta(c)'
+    },
+    btns: [{
+      type: 'button',
+      style: '--line',
+      text: '下一步',
+      clickFun: `submit(pageURL('註冊會員', '註冊認證'))`
+    }]
+  }) %>
+</footer>

@@ -1,0 +1,49 @@
+.mHd {
+  box-shadow: rgba(#000, 0.3) 0 0 5px;
+}
+
+@mixin maxPC {
+  .mHd {
+    height: var(--desktop-header-height);
+  }
+
+  .mHdLogo {
+    margin-left: -680px;
+    width: 164px;
+    height: calc((298 / 1464) * 164px);
+  }
+}
+
+@mixin minPC {
+  .mHd {
+    height: vmp(var(--desktop-header-height));
+  }
+
+  .mHdLogo {
+    margin-left: vmp(-680px);
+    width: vmp(164px);
+    height: vmp((298 / 1464) * 164px);
+  }
+}
+
+@mixin T {
+  .mHd {
+    height: vmt(var(--tablet-header-height));
+  }
+
+  .mHdLogo {
+    width: vmt(124px);
+    height: vmt((298 / 1464) * 124px);
+  }
+}
+
+@mixin M {
+  .mHd {
+    height: vmm(var(--mobile-header-height));
+  }
+
+  .mHdLogo {
+    width: vmm(164px);
+    height: vmm((298 / 1464) * 164px);
+  }
+}
