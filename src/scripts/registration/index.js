@@ -35,6 +35,8 @@ common.VUE.vm = new Vue({
 
   methods: assignMethods({
     submit(url) {
+      const vm = this;
+
       apiRegister({
         Cellphone: vm.phoneValue,
         Password: vm.passwordValue,
